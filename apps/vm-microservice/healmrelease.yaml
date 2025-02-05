@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vm-frontend
+  namespace: vm-apps
+spec:
+  targetNamespace: frontend
+  serviceAccountName: vm-apps-sa
+  chart:
+    spec:
+      chart: charts/vm-frontend
+      sourceRef:
+        kind: GitRepository
+        name: k8s-vm-frontend
+      valuesFiles:
+        - charts/vm-frontend/values.yaml
+        - charts/vm-frontend/values-aks.yaml
+  install:
+    crds: CreateReplace
+    remediation:
+      retries: -1
+  upgrade:
+    crds: CreateReplace
+  interval: 1m

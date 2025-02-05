@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: vm-apps
+  namespace: vm-apps
+spec:
+  interval: 30s
+  ref:
+    branch: main
+  secretRef:
+    name: ssh-vm-apps
+  timeout: 60s
+  url: ssh://git@github.com/vamika-store/FluxCD
