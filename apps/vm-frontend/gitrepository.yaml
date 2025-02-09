@@ -1,10 +1,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: vm-microservice
+  name: vamika-frontend
   namespace: vm-apps
 spec:
   interval: 10m0s
   ref:
     tag: dev
-  url: ssh://git@github.com/vamika-store/vm-frontend
+  url: ssh://git@github.com/vamika-store/vamika-frontend
