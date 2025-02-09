@@ -4,7 +4,7 @@ metadata:
   name: vm-microservice
   namespace: vm-apps
 spec:
-  targetNamespace: frontend
+  targetNamespace: backend
   serviceAccountName: vm-apps-sa
   chart:
     spec:
