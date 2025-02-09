@@ -1,20 +1,20 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: vm-microservice
+  name: vm-frontend
   namespace: vm-apps
 spec:
   targetNamespace: frontend
   serviceAccountName: vm-apps-sa
   chart:
     spec:
-      chart: charts/vm-microservice
+      chart: charts/vm-frontend
       sourceRef:
         kind: GitRepository
-        name: vm-microservice
+        name: vm-frontend
       valuesFiles:
-        - charts/vm-microservice/values.yaml
-        - charts/vm-microservice/values-aks.yaml
+        - charts/vm-frontend/values.yaml
+        - charts/vm-frontend/values-k8s.yaml
   install:
     crds: CreateReplace
     remediation:
