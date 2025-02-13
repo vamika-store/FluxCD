@@ -12,9 +12,10 @@ spec:
       sourceRef:
         kind: GitRepository
         name: vamika-frontend
-      valuesFiles:
-        - charts/vm-frontend/values.yaml
-        - charts/vm-frontend/values-k8s.yaml
+  values:
+    image:
+      repository: kubevamshi/vamika-frontend
+      tag: "v1.0.0"
   install:
     crds: CreateReplace
     remediation:
