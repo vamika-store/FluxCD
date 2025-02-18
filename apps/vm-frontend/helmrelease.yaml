@@ -15,7 +15,7 @@ spec:
   values:
     image:
       repository: kubevamshi/vamika-frontend
-      tag: "v2025-02-14:202049"
+      tag: "v2025-02-18:142322"
   install:
     crds: CreateReplace
     remediation:
